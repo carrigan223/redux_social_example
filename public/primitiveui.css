@@ -770,6 +770,7 @@ button,
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
+  width: 20%;
 }
 
 .button:hover,
