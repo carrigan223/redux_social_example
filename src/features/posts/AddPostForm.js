@@ -7,6 +7,7 @@ export const AddPostForm = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
+  console.log(content)
 
   const dispatch = useDispatch()
 
@@ -18,7 +19,7 @@ export const AddPostForm = () => {
 
   const onSavePostClicked = () => {
     if (title && content) {
-      dispatch(postAdded({ title, content, userId }))
+      dispatch(postAdded( title, content, userId ))
       //reseting state
       setTitle('')
       setContent('')
@@ -65,7 +66,7 @@ export const AddPostForm = () => {
             color: '#FF792A',
           }}
           onClick={onSavePostClicked}
-          disabled={canSave}
+          disabled={!canSave}
         >
           Save Post
         </button>
